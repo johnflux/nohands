@@ -19,3 +19,9 @@ pumpunit_SOURCES = pumpunit.cpp
 pumpunit_LDADD = -L../libhfp -lhfp $(libhfp_LIBS)
 pumpunit_LDFLAGS = -pthread
 pumpunit_DEPENDENCIES = ../libhfp/libhfp.a
+
+atcommands_SOURCES = atcommands.cpp
+atcommands_LDADD = -L../libhfp -lhfp $(libhfp_LIBS)
+atcommands_LDFLAGS = -pthread
+atcommands_DEPENDENCIES = ../libhfp/libhfp.a
+
