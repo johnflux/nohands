@@ -15,6 +15,7 @@
 #include "nohands.h"
 #include "scandialog.h"
 #include "prefs.h"
+#include "runtests.h"
 
 #include <qpushbutton.h>
 #include <qsocketnotifier.h>
@@ -1432,6 +1433,12 @@ public:
 			printf("Dial: %s\n", phoneNum.latin1());
 			DelPend(m_active_dev->m_sess->
 				CmdDial(phoneNum.latin1()));
+		}
+	}
+	virtual void TestClicked() {
+		if ((m_active_dev != NULL) &&
+		    m_active_dev->m_sess->GetService()) {
+			runTests(m_active_dev->m_sess);
 		}
 	}
 	virtual void RedialClicked(void) {

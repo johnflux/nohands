@@ -206,7 +206,7 @@
                         <string>8</string>
                     </property>
                 </widget>
-                <widget class="QLayoutWidget" row="7" column="0" rowspan="1" colspan="3">
+                <widget class="QLayoutWidget" row="8" column="0" rowspan="1" colspan="3">
                     <property name="name">
                         <cstring>layout17</cstring>
                     </property>
@@ -560,6 +560,23 @@
                         <string>4</string>
                     </property>
                 </widget>
+                <widget class="QPushButton" row="7" column="0" rowspan="1" colspan="3">
+                    <property name="name">
+                        <cstring>TestButton</cstring>
+                    </property>
+                    <property name="font">
+                        <font>
+                            <family>Adobe Sans MM</family>
+                            <pointsize>14</pointsize>
+                        </font>
+                    </property>
+                    <property name="text">
+                        <string>Test commands</string>
+                    </property>
+                    <property name="default">
+                        <bool>true</bool>
+                    </property>
+                </widget>
                 <widget class="QPushButton" row="6" column="0" rowspan="1" colspan="3">
                     <property name="name">
                         <cstring>DialButton</cstring>
@@ -675,6 +692,12 @@
         <slot>DialClicked()</slot>
     </connection>
     <connection>
+        <sender>TestButton</sender>
+        <signal>clicked()</signal>
+        <receiver>NoHands</receiver>
+        <slot>TestClicked()</slot>
+    </connection>
+    <connection>
         <sender>NumButton1</sender>
         <signal>pressed()</signal>
         <receiver>NoHands</receiver>
@@ -787,6 +810,7 @@
     <tabstop>NumButtonH</tabstop>
     <tabstop>NumButtonS</tabstop>
     <tabstop>DialButton</tabstop>
+    <tabstop>TestButton</tabstop>
 </tabstops>
 <includes>
     <include location="local" impldecl="in implementation">nohands.ui.h</include>
@@ -818,6 +842,7 @@
     <slot>NumButtonS_pressed()</slot>
     <slot>NumDelButton_clicked()</slot>
     <slot>DialClicked()</slot>
+    <slot>TestClicked()</slot>
     <slot>setHandsetButtonEnabled( bool enabled, bool muted )</slot>
     <slot>DeviceSelectionChanged()</slot>
     <slot>RedialClicked()</slot>

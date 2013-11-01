@@ -47,6 +47,9 @@ void NoHands::NumDelButton_clicked() {
     PhoneNumberEdit->backspace();
 }
 
+void NoHands::TestClicked() {
+}
+
 void NoHands::DialClicked() {
     /* Collect the phone number, clear the input field, invoke the real routine */
     QString phoneNum(PhoneNumberEdit->text());
@@ -65,6 +68,7 @@ void NoHands::setDialButtonsEnabled( bool enabled ) {
     PhoneNumberEdit->clear();
     NumDelButton->setEnabled(enabled);
     DialButton->setEnabled(enabled);
+    TestButton->setEnabled(enabled);
     RedialButton->setEnabled(enabled);
 }
 void NoHands::setDigitButtonsEnabled( bool enabled ) {
